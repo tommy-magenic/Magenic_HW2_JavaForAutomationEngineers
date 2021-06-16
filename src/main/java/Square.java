@@ -1,8 +1,10 @@
 /**
  * TODO FOR HOMEWORK - Square.java
- *      [ ] Correct the setSide method
- *      [ ] Fix the main method
+ *      [X] Correct the setSide method
+ *      [X] Fix the main method
  */
+
+import java.util.Scanner;
 public class Square {
 
     /**
@@ -30,7 +32,9 @@ public class Square {
      * @param side The Side Length of a square
      */
     public void setSide(double side) {
-        this.side = side;
+        if(side >0){
+            this.side = side;
+        }
     }
 
     /**
@@ -57,13 +61,16 @@ public class Square {
      */
     public static void main(String[] args) {
         Square s = new Square();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("enter a side length");
 
-        double sideLength = 4;
+
+        double sideLength = scanner.nextDouble();
 
         s.setSide(sideLength);
 
-        double area = 0;
-        double perimeter = 0;
+        double area = s.area();
+        double perimeter = s.perimeter();
 
         System.out.println("A square with side length of " + s.getSide() + " has an area of: " + area);
         System.out.println("A square with side length of " + s.getSide() + " has a perimeter of: " + perimeter);

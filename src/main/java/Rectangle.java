@@ -25,12 +25,17 @@ public class Rectangle {
      * Gets the length of the rectangle
      * @return The length
      */
-    public double getLength() {
+    public double getLength(){
         return length;
     }
 
     // TODO FOR HOMEWORK: Write the setLength method
     //      NOTE: Use a conditional to only set the value if it's positive and non-zero
+    public void setLength(double length){
+        if (length > 0){
+            this.length = length;
+        }
+    }
 
     public double getWidth() {
         return width;
@@ -38,10 +43,23 @@ public class Rectangle {
 
     // TODO FOR HOMEWORK: Write the setWidth method
     //      NOTE: Use a conditional to only set the value if it's positive and non-zero
+    public void setWidth(double width){
+        if (width > 0) {
+            this.width = width;
+        }
 
+    }
     // TODO FOR HOMEWORK: Write the method for area
-
+    public double area(){
+        return this.length * this.width;
+    }
     // TODO FOR HOMEWORK: Write the method for perimeter
-
+    public double perimeter(){
+        return (2*this.length) + (2*this.width);
+    }
     // TODO FOR HOMEWORK: Write a main method
+    public static void main(String[] args){
+        Rectangle rec = new Rectangle();
+
+    }
 }

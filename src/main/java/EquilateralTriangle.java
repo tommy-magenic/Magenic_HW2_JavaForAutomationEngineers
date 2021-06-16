@@ -5,7 +5,11 @@
 //          you might get wrong.
 //    NOTE: An EquilateralTriangle has the same base for all 3 sides, and the height is always (sqrt(3)/2) * the base.
 //          So the important thing to note is you will only need the base and you can calculate the height
+
+import java.lang.Math.*;
 public class EquilateralTriangle {
+
+    private double base;
     /**
      * Creates an instance of the Triangle class
      * NOTE: Do not touch this method!
@@ -13,4 +17,22 @@ public class EquilateralTriangle {
     public EquilateralTriangle() {
     }
 
+    public double getBase(){
+        return this.base;
+    }
+
+    public void setBase(double base){
+        if(base > 0){
+            this.base = base;
+        }
+    }
+
+    public double area(){
+        double height = Math.sqrt(3) * base / 2;
+        return (height * this.base)/2;
+    }
+
+    public double perimeter(){
+        return 3*this.base;
+    }
 }
